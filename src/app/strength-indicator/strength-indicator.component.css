@@ -1,0 +1,23 @@
+.strength_component{
+    width: 500px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.indicators_container{
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.indicators_container .strength_indicator{
+    width: 30%;
+    height: 12px;
+    border-radius: 10px;
+}
+
+.password_status p{
+    text-align: center;
+}
