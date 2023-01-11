@@ -14,6 +14,7 @@ body{
 .container{
     width: 600px;
     height: fit-content;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +44,14 @@ app-user-name, app-password{
     margin-top: 30px;
 }
 
+span{
+    position: absolute;
+    top: 5px;
+    color: rgb(255, 101, 101);
+    font-size: 18px;
+    font-weight: 700;
+}
+
 h1{
     margin-bottom: 0;
 }
@@ -51,4 +60,22 @@ p{
     font-size: 20px;
     font-weight: 900;
     letter-spacing: 2px;
+}
+
+button{
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(95, 201, 81);
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+button:disabled{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #eaeaea;
+    cursor:no-drop;
 }

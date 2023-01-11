@@ -2,10 +2,16 @@
 
   <form class="form" [formGroup]="formGroup">
 
-    <app-user-name [formControlName]="'name'"></app-user-name>
+    <app-user-name [formControlName]="'userName'"></app-user-name>
+    <span *ngIf="userName.errors?.['minlength']">Name must be at least 4 characters long.</span>
+
     <app-password [formControlName]="'password'"></app-password>
-    <app-strength-indicator [formGroup]="formGroup"></app-strength-indicator>
+
+    <app-strength-indicator [passwordValue]="passwordValue"></app-strength-indicator>
+
+    <button [disabled]="userName.errors || password.errors">Register</button>
 
   </form>
+
 
 </div>

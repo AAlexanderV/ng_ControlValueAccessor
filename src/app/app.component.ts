@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,8 +11,18 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 export class AppComponent {
     public formGroup = new FormGroup({
-    name: new FormControl(""),
-    password: new FormControl("")
+    userName: new FormControl("", [
+      Validators.required,
+      Validators.minLength(4),
+    ]),
+    password: new FormControl("", [
+      Validators.required,
+      Validators.minLength(8),
+    ])
   })
 
+  get userName():any { return this.formGroup.get('userName'); }
+  get password():any { return this.formGroup.get('password'); }
+
+  get passwordValue():any { return this.formGroup.get('password')?.value; }
 }

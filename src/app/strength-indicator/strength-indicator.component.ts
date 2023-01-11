@@ -9,20 +9,20 @@ import { strongPasswordPattern, mediumPasswordPattern } from './passwordStrength
 })
 
 export class StrengthIndicatorComponent  {
-  @Input() formGroup: any;
+  @Input() passwordValue: any;
   passwordStatus : string = "empty";
 
   indicatorsColor(): string[]{
-    if (this.formGroup.value.password.length === 0) {
+    if (this.passwordValue.length === 0) {
       this.passwordStatus = "empty";
       return ["silver", "silver", "silver"];
-    }else if (this.formGroup.value.password.length < 8){
+    }else if (this.passwordValue.length < 8){
       this.passwordStatus = "short";
       return ["red", "red", "red"];
-    }else if (strongPasswordPattern.test(this.formGroup.value.password)) {
+    }else if (strongPasswordPattern.test(this.passwordValue)) {
       this.passwordStatus = "strong";
       return ["lime", "lime", "lime"];
-    }else if(mediumPasswordPattern.test(this.formGroup.value.password)){
+    }else if(mediumPasswordPattern.test(this.passwordValue)){
       this.passwordStatus = "medium";
       return ["yellow", "yellow", "silver"];
     }else{
@@ -30,5 +30,4 @@ export class StrengthIndicatorComponent  {
       return ["red", "silver", "silver"];
     }
   }
-
 }
