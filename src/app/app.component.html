@@ -1,9 +1,10 @@
 <div class="container">
 
   <form class="form" [formGroup]="formGroup">
-
-    <app-user-name [formControlName]="'userName'"></app-user-name>
+    
     <span *ngIf="userName.errors?.['minlength']">Name must be at least 4 characters long.</span>
+    <app-user-name [formControlName]="'userName'"></app-user-name>
+    
 
     <app-password [formControlName]="'password'"></app-password>
 
